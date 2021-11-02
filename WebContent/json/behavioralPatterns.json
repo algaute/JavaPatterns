@@ -1,0 +1,106 @@
+{
+  "chainofresponsability": {
+    "id": "chainofresponsability",
+    "name": "Chain of Responsability pattern",
+    "description": "As the name suggests, the chain of responsibility pattern creates a chain of receiver objects for a request. This pattern decouples sender and receiver of a request based on type of request. This pattern comes under behavioral patterns.<p/>In this pattern, normally each receiver contains reference to another receiver. If one object cannot handle the request then it passes the same to the next receiver and so on.",
+    "implementation": "We have created an abstract class AbstractLogger with a level of logging. Then we have created three types of loggers extending the AbstractLogger. Each logger checks the level of message to its level and print accordingly otherwise does not print and pass the message to its next logger.",
+    "files": [
+      {
+        "file": "AbstractLogger.java",
+        "description": "<h4>Step 1</h4><span>Create an abstract logger class.</span>",
+        "executable": false
+      },
+      {
+        "file": "ConsoleLogger.java",
+        "description": "<h4>Step 2</h4><span>Create concrete classe ConsoleLogger extending the logger.</span>",
+        "executable": false
+      },
+      {
+        "file": "ErrorLogger.java",
+        "description": "<h4>Step 3</h4><span>Create concrete classe ErrorLogger extending the logger.</span>",
+        "executable": false
+      },
+      {
+        "file": "FileLogger.java",
+        "description": "<h4>Step 4</h4><span>Create concrete classe FileLogger extending the logger.</span>",
+        "executable": false
+      },
+      {
+        "file": "PatternDemo.java",
+        "description": "Run the Chain Of Responsability pattern demo",
+        "executable": true
+      }
+    ]
+  },
+  "command": {
+    "id": "command",
+    "name": "Commmand pattern",
+    "description": "Command pattern is a data driven design pattern and falls under behavioral pattern category. A request is wrapped under an object as command and passed to invoker object. Invoker object looks for the appropriate object which can handle this command and passes the command to the corresponding object which executes the command.",
+    "implementation": "We have created an interface Order which is acting as a command. We have created a Stock class which acts as a request. We have concrete command classes BuyStock and SellStock implementing Order interface which will do actual command processing. A class Broker is created which acts as an invoker object. It can take and place orders.<p/>Broker object uses command pattern to identify which object will execute which command based on the type of command. CommandPatternDemo, our demo class, will use Broker class to demonstrate command pattern.",
+    "files": [
+      {
+        "file": "Order.java",
+        "description": "",
+        "executable": false
+      },
+      {
+        "file": "Stock.java",
+        "description": "",
+        "executable": false
+      },
+      {
+        "file": "BuyStock.java",
+        "description": "",
+        "executable": false
+      },
+      {
+        "file": "SellStock.java",
+        "description": "",
+        "executable": false
+      },
+      {
+        "file": "Broker.java",
+        "description": "",
+        "executable": false
+      },
+      {
+        "file": "PatternDemo.java",
+        "description": "Run the Command pattern demo",
+        "executable": true
+      }
+    ]
+  },
+  "interpreter": {
+    "id": "interpreter",
+    "name": "Interpreter pattern",
+    "description": "Interpreter pattern provides a way to evaluate language grammar or expression. This type of pattern comes under behavioral pattern. This pattern involves implementing an expression interface which tells to interpret a particular context. This pattern is used in SQL parsing, symbol processing engine etc.",
+    "implementation": "We are going to create an interface Expression and concrete classes implementing the Expression interface. A class TerminalExpression is defined which acts as a main interpreter of context in question. Other classes OrExpression, AndExpression are used to create combinational expressions.<p/>InterpreterPatternDemo, our demo class, will use Expression class to create rules and demonstrate parsing of expressions.",
+    "files": [
+      {
+        "file": "Expression.java",
+        "description": "",
+        "executable": false
+      },
+      {
+        "file": "TerminalExpression.java",
+        "description": "",
+        "executable": false
+      },
+      {
+        "file": "OrExpression.java",
+        "description": "",
+        "executable": false
+      },
+      {
+        "file": "AndExpression.java",
+        "description": "",
+        "executable": false
+      },
+      {
+        "file": "PatternDemo.java",
+        "description": "Run the Interpreter pattern demo",
+        "executable": true
+      }
+    ]
+  }
+}
